@@ -1,0 +1,8 @@
+{# example: Preview #}
+<pb-ui.input-otp name="code" :length="6" />
+{# example: With a label #}
+<div class="grid gap-2">
+  <pb-ui.label>Verification code</pb-ui.label>
+  <pb-ui.input-otp name="otp" :length="4" />
+  <p class="text-sm text-muted-foreground">Paste the code you received by text message.</p>
+</div>

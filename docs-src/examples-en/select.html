@@ -1,0 +1,15 @@
+{# example: Preview #}
+<pb-ui.select name="framework" class="w-48">
+  <option value="django">Django</option>
+  <option value="flask">Flask</option>
+  <option value="fastapi">FastAPI</option>
+</pb-ui.select>
+{# example: With a label #}
+<div class="grid w-48 gap-2">
+  <pb-ui.label for="role">Role</pb-ui.label>
+  <pb-ui.select id="role" name="role">
+    <option value="admin">Admin</option>
+    <option value="editor">Editor</option>
+    <option value="viewer">Viewer</option>
+  </pb-ui.select>
+</div>

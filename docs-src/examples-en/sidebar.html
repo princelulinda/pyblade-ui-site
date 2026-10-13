@@ -1,0 +1,264 @@
+{# example: Preview | height=560 | full #}
+<pb-ui.sidebar-provider :open="sidebar_open" collapsible="icon">
+  <pb-ui.sidebar>
+    <pb-ui.sidebar-content>
+      <pb-ui.sidebar-group>
+        <pb-ui.sidebar-group-label>Application</pb-ui.sidebar-group-label>
+        <pb-ui.sidebar-group-content>
+          <pb-ui.sidebar-menu>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" active tooltip="Accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Messages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span>Messages</span></pb-ui.sidebar-menu-button>
+              <pb-ui.sidebar-menu-badge>12</pb-ui.sidebar-menu-badge>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Calendrier"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Calendar</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg><span>Search</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Paramètres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+          </pb-ui.sidebar-menu>
+        </pb-ui.sidebar-group-content>
+      </pb-ui.sidebar-group>
+    </pb-ui.sidebar-content>
+    <pb-ui.sidebar-rail />
+  </pb-ui.sidebar>
+  <pb-ui.sidebar-inset>
+    <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+      <pb-ui.sidebar-trigger class="-ml-1" />
+      <span class="text-sm font-medium">Dashboard</span>
+      <span class="ml-auto hidden text-xs text-muted-foreground sm:block">Ctrl / ⌘ + B</span>
+    </header>
+    <div class="grid flex-1 auto-rows-min gap-4 p-4 md:grid-cols-3">
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="min-h-40 rounded-xl bg-muted/60 md:col-span-3"></div>
+    </div>
+  </pb-ui.sidebar-inset>
+</pb-ui.sidebar-provider>
+{# example: Collapsed on load (cookie set to false) | height=560 | full #}
+<pb-ui.sidebar-provider :open="False" collapsible="icon">
+  <pb-ui.sidebar>
+    <pb-ui.sidebar-content>
+      <pb-ui.sidebar-group>
+        <pb-ui.sidebar-group-label>Application</pb-ui.sidebar-group-label>
+        <pb-ui.sidebar-group-content>
+          <pb-ui.sidebar-menu>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" active tooltip="Accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Messages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span>Messages</span></pb-ui.sidebar-menu-button>
+              <pb-ui.sidebar-menu-badge>12</pb-ui.sidebar-menu-badge>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Calendrier"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Calendar</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg><span>Search</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Paramètres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+          </pb-ui.sidebar-menu>
+        </pb-ui.sidebar-group-content>
+      </pb-ui.sidebar-group>
+    </pb-ui.sidebar-content>
+    <pb-ui.sidebar-rail />
+  </pb-ui.sidebar>
+  <pb-ui.sidebar-inset>
+    <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+      <pb-ui.sidebar-trigger class="-ml-1" />
+      <span class="text-sm font-medium">Rendered collapsed by the server</span>
+      <span class="ml-auto hidden text-xs text-muted-foreground sm:block">Ctrl / ⌘ + B</span>
+    </header>
+    <div class="grid flex-1 auto-rows-min gap-4 p-4 md:grid-cols-3">
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="min-h-40 rounded-xl bg-muted/60 md:col-span-3"></div>
+    </div>
+  </pb-ui.sidebar-inset>
+</pb-ui.sidebar-provider>
+{# example: Offcanvas | height=560 | full #}
+<pb-ui.sidebar-provider collapsible="offcanvas">
+  <pb-ui.sidebar>
+    <pb-ui.sidebar-content>
+      <pb-ui.sidebar-group>
+        <pb-ui.sidebar-group-label>Application</pb-ui.sidebar-group-label>
+        <pb-ui.sidebar-group-content>
+          <pb-ui.sidebar-menu>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" active tooltip="Accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Messages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span>Messages</span></pb-ui.sidebar-menu-button>
+              <pb-ui.sidebar-menu-badge>12</pb-ui.sidebar-menu-badge>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Calendrier"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Calendar</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg><span>Search</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Paramètres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+          </pb-ui.sidebar-menu>
+        </pb-ui.sidebar-group-content>
+      </pb-ui.sidebar-group>
+    </pb-ui.sidebar-content>
+    <pb-ui.sidebar-rail />
+  </pb-ui.sidebar>
+  <pb-ui.sidebar-inset>
+    <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+      <pb-ui.sidebar-trigger class="-ml-1" />
+      <span class="text-sm font-medium">The sidebar slides fully off screen</span>
+      <span class="ml-auto hidden text-xs text-muted-foreground sm:block">Ctrl / ⌘ + B</span>
+    </header>
+    <div class="grid flex-1 auto-rows-min gap-4 p-4 md:grid-cols-3">
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="min-h-40 rounded-xl bg-muted/60 md:col-span-3"></div>
+    </div>
+  </pb-ui.sidebar-inset>
+</pb-ui.sidebar-provider>
+{# example: Floating | height=560 | full #}
+<pb-ui.sidebar-provider variant="floating" collapsible="icon">
+  <pb-ui.sidebar>
+    <pb-ui.sidebar-content>
+      <pb-ui.sidebar-group>
+        <pb-ui.sidebar-group-label>Application</pb-ui.sidebar-group-label>
+        <pb-ui.sidebar-group-content>
+          <pb-ui.sidebar-menu>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" active tooltip="Accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Messages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span>Messages</span></pb-ui.sidebar-menu-button>
+              <pb-ui.sidebar-menu-badge>12</pb-ui.sidebar-menu-badge>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Calendrier"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Calendar</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg><span>Search</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Paramètres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+          </pb-ui.sidebar-menu>
+        </pb-ui.sidebar-group-content>
+      </pb-ui.sidebar-group>
+    </pb-ui.sidebar-content>
+    <pb-ui.sidebar-rail />
+  </pb-ui.sidebar>
+  <pb-ui.sidebar-inset>
+    <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+      <pb-ui.sidebar-trigger class="-ml-1" />
+      <span class="text-sm font-medium">Floating variant</span>
+      <span class="ml-auto hidden text-xs text-muted-foreground sm:block">Ctrl / ⌘ + B</span>
+    </header>
+    <div class="grid flex-1 auto-rows-min gap-4 p-4 md:grid-cols-3">
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="min-h-40 rounded-xl bg-muted/60 md:col-span-3"></div>
+    </div>
+  </pb-ui.sidebar-inset>
+</pb-ui.sidebar-provider>
+{# example: Inset | height=560 | full #}
+<pb-ui.sidebar-provider variant="inset" collapsible="icon">
+  <pb-ui.sidebar>
+    <pb-ui.sidebar-content>
+      <pb-ui.sidebar-group>
+        <pb-ui.sidebar-group-label>Application</pb-ui.sidebar-group-label>
+        <pb-ui.sidebar-group-content>
+          <pb-ui.sidebar-menu>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" active tooltip="Accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Messages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span>Messages</span></pb-ui.sidebar-menu-button>
+              <pb-ui.sidebar-menu-badge>12</pb-ui.sidebar-menu-badge>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Calendrier"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Calendar</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg><span>Search</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Paramètres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+          </pb-ui.sidebar-menu>
+        </pb-ui.sidebar-group-content>
+      </pb-ui.sidebar-group>
+    </pb-ui.sidebar-content>
+    <pb-ui.sidebar-rail />
+  </pb-ui.sidebar>
+  <pb-ui.sidebar-inset>
+    <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+      <pb-ui.sidebar-trigger class="-ml-1" />
+      <span class="text-sm font-medium">Inset variant</span>
+      <span class="ml-auto hidden text-xs text-muted-foreground sm:block">Ctrl / ⌘ + B</span>
+    </header>
+    <div class="grid flex-1 auto-rows-min gap-4 p-4 md:grid-cols-3">
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="min-h-40 rounded-xl bg-muted/60 md:col-span-3"></div>
+    </div>
+  </pb-ui.sidebar-inset>
+</pb-ui.sidebar-provider>
+{# example: On the right | height=560 | full #}
+<pb-ui.sidebar-provider side="right">
+  <pb-ui.sidebar>
+    <pb-ui.sidebar-content>
+      <pb-ui.sidebar-group>
+        <pb-ui.sidebar-group-label>Application</pb-ui.sidebar-group-label>
+        <pb-ui.sidebar-group-content>
+          <pb-ui.sidebar-menu>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" active tooltip="Accueil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Messages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span>Messages</span></pb-ui.sidebar-menu-button>
+              <pb-ui.sidebar-menu-badge>12</pb-ui.sidebar-menu-badge>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Calendrier"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Calendar</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Recherche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg><span>Search</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+            <pb-ui.sidebar-menu-item>
+              <pb-ui.sidebar-menu-button href="#" tooltip="Paramètres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></pb-ui.sidebar-menu-button>
+            </pb-ui.sidebar-menu-item>
+          </pb-ui.sidebar-menu>
+        </pb-ui.sidebar-group-content>
+      </pb-ui.sidebar-group>
+    </pb-ui.sidebar-content>
+    <pb-ui.sidebar-rail />
+  </pb-ui.sidebar>
+  <pb-ui.sidebar-inset>
+    <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+      <pb-ui.sidebar-trigger class="-ml-1" />
+      <span class="text-sm font-medium">Sidebar on the right</span>
+      <span class="ml-auto hidden text-xs text-muted-foreground sm:block">Ctrl / ⌘ + B</span>
+    </header>
+    <div class="grid flex-1 auto-rows-min gap-4 p-4 md:grid-cols-3">
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="aspect-video rounded-xl bg-muted/60"></div>
+      <div class="min-h-40 rounded-xl bg-muted/60 md:col-span-3"></div>
+    </div>
+  </pb-ui.sidebar-inset>
+</pb-ui.sidebar-provider>

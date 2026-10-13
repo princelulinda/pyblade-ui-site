@@ -1,0 +1,17 @@
+{# example: Preview #}
+<pb-ui.radio-group>
+  <label class="flex items-center gap-3 text-sm"><pb-ui.radio-group-item name="density" value="default" /> Default</label>
+  <label class="flex items-center gap-3 text-sm"><pb-ui.radio-group-item name="density" value="comfortable" checked /> Comfortable</label>
+  <label class="flex items-center gap-3 text-sm"><pb-ui.radio-group-item name="density" value="compact" /> Compact</label>
+</pb-ui.radio-group>
+{# example: Choice cards | height=320 #}
+<pb-ui.radio-group class="w-full max-w-sm">
+  <label class="flex cursor-pointer items-start gap-3 rounded-lg border p-4 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+    <pb-ui.radio-group-item name="plan" value="starter" class="mt-0.5" checked />
+    <div class="grid gap-1"><span class="text-sm font-medium">Starter</span><span class="text-sm text-muted-foreground">For personal projects.</span></div>
+  </label>
+  <label class="flex cursor-pointer items-start gap-3 rounded-lg border p-4 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+    <pb-ui.radio-group-item name="plan" value="pro" class="mt-0.5" />
+    <div class="grid gap-1"><span class="text-sm font-medium">Pro</span><span class="text-sm text-muted-foreground">For growing teams.</span></div>
+  </label>
+</pb-ui.radio-group>

@@ -1,7 +1,8 @@
 """Build the docs data from the PyBlade UI registry.
 
 Renders every example in docs-src/examples with the real components, then writes:
-  content/registry.json        what the docs pages read (sources, examples, rendered HTML, props)
+  content/registry.json        what the docs pages read (sources, examples, rendered HTML, props),
+                               and the landing showcase in other languages (docs-src/landing/<lang>/)
   public/preview/preview.css   Tailwind CSS for the previews, with the generated theme
   public/preview/alpine.min.js Alpine.js for the interactive previews
 
@@ -32,6 +33,8 @@ from pyblade_ui.cli.main import main as cli  # noqa: E402
 from pyblade_ui.registry import Registry  # noqa: E402
 
 EXAMPLES = ROOT / "docs-src" / "examples"
+EXAMPLES_EN = ROOT / "docs-src" / "examples-en"
+LANDING = ROOT / "docs-src" / "landing"
 PREVIEW = ROOT / "public" / "preview"
 MARK = re.compile(r"^\{#\s*example:\s*(.+?)\s*#\}\s*$", re.M)
 PROPS = re.compile(r"^@props\((\{.*?\})\)", re.S)
@@ -77,6 +80,41 @@ CONTEXT = {
     ],
 }
 
+# The same data in English, for docs-src/examples-en.
+CONTEXT_EN = {
+    **CONTEXT,
+    "form": {"errors": {"email": ["Enter a valid email address."]}},
+    "invoices": [
+        {"id": "INV001", "status": "Paid", "method": "Credit Card", "amount": "$250.00"},
+        {"id": "INV002", "status": "Pending", "method": "PayPal", "amount": "$150.00"},
+        {"id": "INV003", "status": "Unpaid", "method": "Bank Transfer", "amount": "$350.00"},
+        {"id": "INV004", "status": "Paid", "method": "Credit Card", "amount": "$450.00"},
+    ],
+    "payments": [
+        dict(p, status={"Réussi": "Success", "En cours": "Processing", "Échoué": "Failed"}[p["status"]])
+        for p in CONTEXT["payments"]
+    ],
+    "payment_columns": [
+        {"key": "status", "label": "Status", "format": "badge"},
+        {"key": "email", "label": "Email", "sortable": True},
+        {"key": "amount", "label": "Amount", "sortable": True, "align": "right", "format": "currency"},
+    ],
+    "visitors": [
+        dict(v, month=en) for v, en in zip(CONTEXT["visitors"], ["Jan", "Feb", "Mar", "Apr", "May", "Jun"])
+    ],
+    "article_html": (
+        "<h2>Rich content</h2><p>The <code>prose</code> wrapper styles HTML from a CMS or from Markdown: "
+        "<a href='#'>links</a>, <strong>bold text</strong> and lists.</p><ul><li>First point</li><li>Second point</li></ul>"
+        "<blockquote>A quote, in italics.</blockquote>"
+    ),
+}
+
+# Sidebar group titles in English.
+GROUPS_EN = {
+    "Actions": "Actions", "Formulaires": "Forms", "Données": "Data", "Affichage": "Display",
+    "Navigation": "Navigation", "Overlays": "Overlays", "Thème": "Theme", "Blocs": "Blocks", "Autres": "Other",
+}
+
 # Order and grouping of the sidebar.
 GROUPS = [
     ("Actions", ["button", "button-link", "button-group", "toggle", "toggle-group", "dropdown-menu", "context-menu", "menubar", "command"]),
@@ -90,8 +128,8 @@ GROUPS = [
 ]
 
 
-def examples_for(name: str) -> list[dict]:
-    file = EXAMPLES / f"{name}.html"
+def examples_for(name: str, folder: Path = EXAMPLES) -> list[dict]:
+    file = folder / f"{name}.html"
     if not file.is_file():
         return []
     text = file.read_text(encoding="utf-8")
@@ -148,13 +186,15 @@ def main() -> int:
                     source = registry.read_file(path)
                     files.append({"path": f"components/{path}", "content": source, "props": props_of(source)})
                 examples = examples_for(item.name)
-                for ex in examples:
-                    try:
-                        ex["html"] = engine.render(ex["code"], dict(CONTEXT))
-                        rendered.append(ex["html"])
-                    except Exception as exc:  # noqa: BLE001
-                        failed.append(f"{item.name} / {ex['title']}: {exc}")
-                        ex["html"] = ""
+                examples_en = examples_for(item.name, EXAMPLES_EN)
+                for lang, exs, context in (("fr", examples, CONTEXT), ("en", examples_en, CONTEXT_EN)):
+                    for ex in exs:
+                        try:
+                            ex["html"] = engine.render(ex["code"], dict(context))
+                            rendered.append(ex["html"])
+                        except Exception as exc:  # noqa: BLE001
+                            failed.append(f"{lang} {item.name} / {ex['title']}: {exc}")
+                            ex["html"] = ""
                 items.append({
                     "name": item.name,
                     "title": item.title,
@@ -166,7 +206,19 @@ def main() -> int:
                     "python": item.python,
                     "usage": item.usage,
                     "examples": examples,
+                    "examples_en": examples_en,
                 })
+            # The landing page's showcase in other languages: docs-src/landing/<lang>/<component>.html
+            landing = {}
+            for folder in sorted(p for p in LANDING.glob("*") if p.is_dir()):
+                landing[folder.name] = {}
+                for file in sorted(folder.glob("*.html")):
+                    try:
+                        html = engine.render(file.read_text(encoding="utf-8"), dict(CONTEXT))
+                        landing[folder.name][file.stem] = html
+                        rendered.append(html)
+                    except Exception as exc:  # noqa: BLE001
+                        failed.append(f"landing/{folder.name}/{file.name}: {exc}")
         finally:
             os.chdir(cwd)
 
@@ -176,10 +228,13 @@ def main() -> int:
 
     order = [n for _, names in GROUPS for n in names]
     missing = [i["name"] for i in items if i["name"] not in order]
-    groups = [{"title": t, "items": [n for n in names if n in {i["name"] for i in items}]} for t, names in GROUPS]
+    groups = [
+        {"title": t, "title_en": GROUPS_EN.get(t, t), "items": [n for n in names if n in {i["name"] for i in items}]}
+        for t, names in GROUPS
+    ]
     if missing:
-        groups.append({"title": "Autres", "items": missing})
-    data = {"groups": groups, "items": items}
+        groups.append({"title": "Autres", "title_en": "Other", "items": missing})
+    data = {"groups": groups, "items": items, "landing": landing}
     (ROOT / "content").mkdir(exist_ok=True)
     (ROOT / "content" / "registry.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 

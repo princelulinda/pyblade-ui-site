@@ -4,28 +4,30 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-type Entry = { name: string; title: string; description: string };
-
-const PAGES: Entry[] = [
-  { name: "/docs", title: "Introduction", description: "Ce qu'est PyBlade UI" },
-  { name: "/docs/installation", title: "Installation", description: "Configurer un projet PyBlade" },
-  { name: "/docs/theming", title: "Thèmes", description: "Variables CSS, couleurs et mode sombre" },
-  { name: "/docs/cli", title: "CLI", description: "Les commandes pyblade-ui" },
-];
+type Entry = { href: string; title: string; description: string };
 
 /** ⌘K: jump to any docs page or component. */
-export function SearchButton({ entries }: { entries: Entry[] }) {
+export function SearchButton({
+  entries,
+  label = "Rechercher…",
+  placeholder = "Rechercher un composant ou une page…",
+  empty = "Aucun résultat.",
+}: {
+  entries: Entry[];
+  label?: string;
+  placeholder?: string;
+  empty?: string;
+}) {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const [sel, setSel] = useState(0);
   const input = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  const all = useMemo(() => [...PAGES, ...entries.map((e) => ({ ...e, name: `/docs/components/${e.name}` }))], [entries]);
   const found = useMemo(() => {
     const s = q.trim().toLowerCase();
-    return s ? all.filter((e) => e.title.toLowerCase().includes(s) || e.name.includes(s)) : all;
-  }, [q, all]);
+    return s ? entries.filter((e) => e.title.toLowerCase().includes(s) || e.href.includes(s)) : entries;
+  }, [q, entries]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -54,7 +56,7 @@ export function SearchButton({ entries }: { entries: Entry[] }) {
         onClick={() => setOpen(true)}
         className="hidden h-9 w-56 items-center justify-between rounded-lg border border-border bg-muted/50 px-3 text-sm text-muted-foreground transition hover:border-ring lg:flex"
       >
-        Rechercher…
+        {label}
         <kbd className="rounded border border-border bg-surface px-1.5 font-mono text-[10px]">⌘K</kbd>
       </button>
       {open && createPortal(
@@ -76,19 +78,19 @@ export function SearchButton({ entries }: { entries: Entry[] }) {
                 if (e.key === "Escape") setOpen(false);
                 if (e.key === "ArrowDown") { e.preventDefault(); setSel((s) => Math.min(s + 1, found.length - 1)); }
                 if (e.key === "ArrowUp") { e.preventDefault(); setSel((s) => Math.max(s - 1, 0)); }
-                if (e.key === "Enter" && found[sel]) go(found[sel].name);
+                if (e.key === "Enter" && found[sel]) go(found[sel].href);
               }}
-              placeholder="Rechercher un composant ou une page…"
+              placeholder={placeholder}
               className="h-12 w-full border-b border-border bg-transparent px-4 text-sm outline-none placeholder:text-muted-foreground"
             />
             <ul className="max-h-80 overflow-auto p-2">
-              {found.length === 0 && <li className="px-3 py-6 text-center text-sm text-muted-foreground">Aucun résultat.</li>}
+              {found.length === 0 && <li className="px-3 py-6 text-center text-sm text-muted-foreground">{empty}</li>}
               {found.map((e, i) => (
-                <li key={e.name}>
+                <li key={e.href}>
                   <button
                     type="button"
                     onMouseEnter={() => setSel(i)}
-                    onClick={() => go(e.name)}
+                    onClick={() => go(e.href)}
                     className={`flex w-full flex-col items-start rounded-lg px-3 py-2 text-left text-sm ${i === sel ? "bg-muted" : ""}`}
                   >
                     <span className="font-medium">{e.title}</span>

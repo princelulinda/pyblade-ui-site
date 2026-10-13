@@ -1,0 +1,33 @@
+{# example: Preview | height=320 #}
+<div class="w-full max-w-sm">
+  <pb-ui.field>
+    <pb-ui.field-label for="username">Username</pb-ui.field-label>
+    <pb-ui.input id="username" placeholder="ada" />
+    <pb-ui.field-description>Choose a unique name for your account.</pb-ui.field-description>
+  </pb-ui.field>
+</div>
+{# example: With an error | height=320 #}
+<div class="w-full max-w-sm">
+  <pb-ui.field invalid>
+    <pb-ui.field-label for="mail">Email</pb-ui.field-label>
+    <pb-ui.input id="mail" value="ada@" aria-invalid="true" />
+    <pb-ui.field-description>Used to sign in.</pb-ui.field-description>
+    <pb-ui.field-error>Enter a valid email address.</pb-ui.field-error>
+  </pb-ui.field>
+</div>
+{# example: Horizontal #}
+<div class="w-full max-w-sm">
+  <pb-ui.field orientation="horizontal">
+    <pb-ui.field-label for="news">Subscribe to the newsletter</pb-ui.field-label>
+    <pb-ui.switch id="news" checked />
+  </pb-ui.field>
+</div>
+{# example: With form errors (@error) | height=320 #}
+<div class="w-full max-w-sm">
+  <pb-ui.field :errors="form.errors" name="email">
+    <pb-ui.field-label for="femail">Email</pb-ui.field-label>
+    <pb-ui.input id="femail" name="email" value="ada@" aria-invalid="true" />
+    <pb-ui.field-description>Used to sign in.</pb-ui.field-description>
+    <pb-ui.field-error :errors="form.errors" name="email" />
+  </pb-ui.field>
+</div>

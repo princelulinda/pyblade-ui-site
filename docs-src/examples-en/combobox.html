@@ -1,0 +1,19 @@
+{# example: Preview | height=380 #}
+<pb-ui.combobox name="framework" placeholder="Select a framework…" search_placeholder="Search…" empty="No framework found." class="w-60">
+  <pb-ui.combobox-item value="django">Django</pb-ui.combobox-item>
+  <pb-ui.combobox-item value="flask">Flask</pb-ui.combobox-item>
+  <pb-ui.combobox-item value="fastapi">FastAPI</pb-ui.combobox-item>
+  <pb-ui.combobox-item value="litestar">Litestar</pb-ui.combobox-item>
+  <pb-ui.combobox-item value="starlette">Starlette</pb-ui.combobox-item>
+</pb-ui.combobox>
+{# example: With a value and a label | height=380 #}
+<div class="grid w-64 gap-2">
+  <pb-ui.label>Language</pb-ui.label>
+  <pb-ui.combobox name="language" value="fr" search_placeholder="Search a language…">
+    <pb-ui.combobox-item value="en">English</pb-ui.combobox-item>
+    <pb-ui.combobox-item value="fr">Français</pb-ui.combobox-item>
+    <pb-ui.combobox-item value="es">Español</pb-ui.combobox-item>
+    <pb-ui.combobox-item value="sw">Kiswahili</pb-ui.combobox-item>
+    <pb-ui.combobox-item value="ln">Lingála</pb-ui.combobox-item>
+  </pb-ui.combobox>
+</div>

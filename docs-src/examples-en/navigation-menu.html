@@ -1,0 +1,29 @@
+{# example: Preview | height=380 #}
+<pb-ui.navigation-menu>
+  <pb-ui.navigation-menu-list>
+    <pb-ui.navigation-menu-item>
+      <pb-ui.navigation-menu-trigger>Getting started</pb-ui.navigation-menu-trigger>
+      <pb-ui.navigation-menu-content class="grid w-[400px] grid-cols-[.75fr_1fr] gap-2">
+        <a href="#" class="flex h-full flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-hidden">
+          <div class="mb-2 text-lg font-medium">PyBlade UI</div>
+          <p class="text-sm leading-tight text-muted-foreground">Components to copy into your project.</p>
+        </a>
+        <div class="grid gap-1">
+          <pb-ui.navigation-menu-link href="#"><div class="font-medium">Introduction</div><p class="text-muted-foreground">How the library works.</p></pb-ui.navigation-menu-link>
+          <pb-ui.navigation-menu-link href="#"><div class="font-medium">Installation</div><p class="text-muted-foreground">Set up a project.</p></pb-ui.navigation-menu-link>
+        </div>
+      </pb-ui.navigation-menu-content>
+    </pb-ui.navigation-menu-item>
+    <pb-ui.navigation-menu-item>
+      <pb-ui.navigation-menu-trigger>Components</pb-ui.navigation-menu-trigger>
+      <pb-ui.navigation-menu-content class="grid w-[440px] grid-cols-2 gap-1">
+        @for(c in ['Dialog', 'Sheet', 'Tabs', 'Command'])
+        <pb-ui.navigation-menu-link href="#"><div class="font-medium">{{ c }}</div><p class="text-muted-foreground">See the component.</p></pb-ui.navigation-menu-link>
+        @endfor
+      </pb-ui.navigation-menu-content>
+    </pb-ui.navigation-menu-item>
+    <pb-ui.navigation-menu-item>
+      <pb-ui.navigation-menu-link href="#" class="px-4 py-2 font-medium">Docs</pb-ui.navigation-menu-link>
+    </pb-ui.navigation-menu-item>
+  </pb-ui.navigation-menu-list>
+</pb-ui.navigation-menu>

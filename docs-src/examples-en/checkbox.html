@@ -1,0 +1,18 @@
+{# example: Preview #}
+<div class="flex items-center gap-2">
+  <pb-ui.checkbox id="terms" checked />
+  <pb-ui.label for="terms">Accept terms and conditions</pb-ui.label>
+</div>
+{# example: With a description #}
+<div class="flex items-start gap-3">
+  <pb-ui.checkbox id="news" />
+  <div class="grid gap-1.5">
+    <pb-ui.label for="news">Subscribe to the newsletter</pb-ui.label>
+    <p class="text-sm text-muted-foreground">One email a month, never more.</p>
+  </div>
+</div>
+{# example: Disabled #}
+<div class="flex items-center gap-2">
+  <pb-ui.checkbox id="off" disabled />
+  <pb-ui.label for="off">Unavailable</pb-ui.label>
+</div>

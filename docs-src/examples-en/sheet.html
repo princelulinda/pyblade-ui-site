@@ -1,0 +1,28 @@
+{# example: Preview | height=480 #}
+<pb-ui.sheet name="profile">
+  <pb-slot:trigger><pb-ui.button variant="outline">Open</pb-ui.button></pb-slot:trigger>
+  <pb-ui.sheet-header>
+    <pb-ui.sheet-title>Edit profile</pb-ui.sheet-title>
+    <pb-ui.sheet-description>Save when you are done.</pb-ui.sheet-description>
+  </pb-ui.sheet-header>
+  <div class="grid gap-4 px-4">
+    <div class="grid gap-2"><pb-ui.label for="sname">Name</pb-ui.label><pb-ui.input id="sname" value="Ada Lovelace" /></div>
+    <div class="grid gap-2"><pb-ui.label for="suser">Username</pb-ui.label><pb-ui.input id="suser" value="@ada" /></div>
+  </div>
+  <pb-ui.sheet-footer>
+    <pb-ui.button>Save</pb-ui.button>
+    <pb-ui.sheet-close><pb-ui.button variant="outline">Close</pb-ui.button></pb-ui.sheet-close>
+  </pb-ui.sheet-footer>
+</pb-ui.sheet>
+{# example: Sides | height=480 #}
+<div class="grid grid-cols-2 gap-2">
+  @for(side in ['top', 'right', 'bottom', 'left'])
+  <pb-ui.sheet :side="side">
+    <pb-slot:trigger><pb-ui.button variant="outline" class="w-full">{{ side }}</pb-ui.button></pb-slot:trigger>
+    <pb-ui.sheet-header>
+      <pb-ui.sheet-title>{{ side.capitalize() }} panel</pb-ui.sheet-title>
+      <pb-ui.sheet-description>It slides in from this edge of the screen.</pb-ui.sheet-description>
+    </pb-ui.sheet-header>
+  </pb-ui.sheet>
+  @endfor
+</div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { HairlineStage } from "./hairline-stage";
 
-export function ThemeToggle() {
+export function ThemeToggle({ label = "Changer de thème" }: { label?: string }) {
   const toggle = () => {
     const root = document.documentElement;
     const next = root.dataset.theme === "dark" ? "light" : "dark";
@@ -16,7 +16,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label="Changer de thème"
+      aria-label={label}
       className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground"
     >
       <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -28,7 +28,7 @@ export function ThemeToggle() {
   );
 }
 
-export function CopyCommand({ command }: { command: string }) {
+export function CopyCommand({ command, labels = { copy: "copier", copied: "copié" } }: { command: string; labels?: { copy: string; copied: string } }) {
   const [copied, setCopied] = useState(false);
   const copy = async () => {
     try {
@@ -46,7 +46,7 @@ export function CopyCommand({ command }: { command: string }) {
       <span className="text-muted-foreground/60">$</span>
       <span className="text-foreground">{command}</span>
       <span className="ml-1 text-xs text-muted-foreground transition group-hover:text-foreground">
-        {copied ? "copié" : "copier"}
+        {copied ? labels.copied : labels.copy}
       </span>
     </button>
   );
@@ -56,7 +56,7 @@ export function CopyCommand({ command }: { command: string }) {
 const TAGS: Record<string, string> = { radio: "radio-group" };
 
 /** The hero's figure, with its read-out in the plate's corner. */
-export function HeroFigure() {
+export function HeroFigure({ idle = "survolez un composant" }: { idle?: string }) {
   const [read, setRead] = useState("rest");
   return (
     <div className="relative">
@@ -65,7 +65,7 @@ export function HeroFigure() {
         kit
       </div>
       <div className="absolute right-4 top-4 z-10 rounded-md border border-border bg-surface px-2 py-1 font-mono text-[11px] tabular-nums text-foreground">
-        {read === "rest" ? "survolez un composant" : `<pb-ui.${TAGS[read] ?? read} />`}
+        {read === "rest" ? idle : `<pb-ui.${TAGS[read] ?? read} />`}
       </div>
       {/* the stage is drawn 25% larger and cropped, so the tray fills the plate */}
       <div className="aspect-[5/4] w-full overflow-hidden rounded-[22px]">

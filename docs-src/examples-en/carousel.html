@@ -1,0 +1,24 @@
+{# example: Preview | height=360 #}
+<pb-ui.carousel class="w-full max-w-xs">
+  <pb-ui.carousel-content>
+    @for(n in [1, 2, 3, 4, 5])
+    <pb-ui.carousel-item class="p-1">
+      <div class="flex aspect-square items-center justify-center rounded-xl border bg-card text-4xl font-semibold">{{ n }}</div>
+    </pb-ui.carousel-item>
+    @endfor
+  </pb-ui.carousel-content>
+  <pb-ui.carousel-previous />
+  <pb-ui.carousel-next />
+</pb-ui.carousel>
+{# example: Several slides in view | height=280 #}
+<pb-ui.carousel class="w-full max-w-sm">
+  <pb-ui.carousel-content>
+    @for(n in [1, 2, 3, 4, 5, 6])
+    <pb-ui.carousel-item class="basis-1/3 p-1">
+      <div class="flex aspect-square items-center justify-center rounded-xl border bg-card text-2xl font-semibold">{{ n }}</div>
+    </pb-ui.carousel-item>
+    @endfor
+  </pb-ui.carousel-content>
+  <pb-ui.carousel-previous />
+  <pb-ui.carousel-next />
+</pb-ui.carousel>

@@ -1,0 +1,9 @@
+{# example: Preview | height=440 #}
+<pb-ui.date-picker name="due" placeholder="Pick a date" class="w-64" />
+{# example: In a form | height=460 #}
+<form class="grid w-72 gap-2" x-data x-on:submit.prevent="$el.querySelector('output').textContent = new FormData($el).get('birthday') || '—'">
+  <pb-ui.label>Date of birth</pb-ui.label>
+  <pb-ui.date-picker name="birthday" value="1815-12-10" />
+  <p class="text-sm text-muted-foreground">Value submitted: <output class="font-mono text-foreground">—</output></p>
+  <pb-ui.button type="submit" class="w-fit">Submit</pb-ui.button>
+</form>

@@ -1,0 +1,22 @@
+{# example: Preview | height=380 #}
+<pb-ui.table>
+  <pb-ui.table-caption>A list of your recent invoices.</pb-ui.table-caption>
+  <pb-ui.table-header>
+    <pb-ui.table-row>
+      <pb-ui.table-head>Invoice</pb-ui.table-head>
+      <pb-ui.table-head>Status</pb-ui.table-head>
+      <pb-ui.table-head>Method</pb-ui.table-head>
+      <pb-ui.table-head class="text-right">Amount</pb-ui.table-head>
+    </pb-ui.table-row>
+  </pb-ui.table-header>
+  <pb-ui.table-body>
+    @for(invoice in invoices)
+    <pb-ui.table-row>
+      <pb-ui.table-cell class="font-medium">{{ invoice.id }}</pb-ui.table-cell>
+      <pb-ui.table-cell>{{ invoice.status }}</pb-ui.table-cell>
+      <pb-ui.table-cell>{{ invoice.method }}</pb-ui.table-cell>
+      <pb-ui.table-cell class="text-right">{{ invoice.amount }}</pb-ui.table-cell>
+    </pb-ui.table-row>
+    @endfor
+  </pb-ui.table-body>
+</pb-ui.table>
