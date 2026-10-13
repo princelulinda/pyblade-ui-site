@@ -2,6 +2,10 @@
 
 export type Locale = "fr" | "en";
 
+/** The theme editor (pyblade-themes), in the given language. */
+export const THEMES_URL = "https://pyblade-themes-red.vercel.app";
+export const themesUrl = (locale: Locale) => `${THEMES_URL}${locale === "en" ? "/en/" : "/"}`;
+
 export const LOCALES: Record<Locale, { label: string; home: string; htmlLang: string }> = {
   fr: { label: "FR", home: "/", htmlLang: "fr" },
   en: { label: "EN", home: "/en", htmlLang: "en" },
@@ -65,6 +69,13 @@ const fr = {
     body: "Gratuit et open source. Prenez votre premier composant aujourd'hui.",
     docs: "Lire la documentation",
   },
+  editor: {
+    kicker: "Éditeur de thèmes",
+    title: "Faites-en votre thème.",
+    body: "Réglez chaque couleur, le rayon et les ombres, en clair et en sombre, sur les vrais composants. Partez de Vercel, MUI, GitHub, Stripe… puis copiez la commande ou le theme.css.",
+    button: "Ouvrir l'éditeur de thèmes",
+    footer: "Éditeur de thèmes",
+  },
   footer: { docs: "Documentation", install: "Installation", themes: "Thèmes", note: "Pour la communauté PyBlade. Open source, licence MIT." },
 };
 
@@ -127,6 +138,13 @@ const en: Dictionary = {
     title: "Start building in minutes.",
     body: "Free and open source. Pick up your first component today.",
     docs: "Read the docs",
+  },
+  editor: {
+    kicker: "Theme editor",
+    title: "Make it your theme.",
+    body: "Tune every color, the radius and the shadows, in light and dark mode, on the real components. Start from Vercel, MUI, GitHub, Stripe… then copy the command or the theme.css.",
+    button: "Open the theme editor",
+    footer: "Theme editor",
   },
   footer: { docs: "Documentation", install: "Installation", themes: "Themes", note: "Made for the PyBlade community. Open source, MIT licensed." },
 };

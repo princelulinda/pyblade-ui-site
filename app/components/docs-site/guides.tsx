@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { CodeBlock } from "@/app/components/docs/code-block";
 import { IsoGlyph } from "@/app/components/iso-glyph";
-import type { Locale } from "@/lib/i18n";
+import { themesUrl, type Locale } from "@/lib/i18n";
 import { docsDictionaries, docsPath } from "@/lib/i18n-docs";
 import { blockCount, componentCount, getItem, groups } from "@/lib/registry";
 import { DocPage, H2, P } from "./doc-page";
@@ -277,6 +277,28 @@ export function ThemingPage({ locale }: { locale: Locale }) {
       prev={{ href: docsPath(locale, "/installation"), label: t.installation }}
       next={{ href: docsPath(locale, "/cli"), label: t.cli }}
     >
+      <a
+        href={themesUrl(locale)}
+        className="flex items-center gap-4 rounded-xl border border-border bg-muted/40 p-4 transition hover:border-ring hover:bg-muted"
+      >
+        <span className="flex -space-x-1.5">
+          {["#171717", "#1976d2", "#635bff", "#e11d48"].map((c) => (
+            <span key={c} className="size-6 rounded-full border-2 border-background" style={{ background: c }} />
+          ))}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block font-medium text-foreground">{L(locale, "Éditeur de thèmes", "Theme editor")}</span>
+          <span className="block text-sm text-muted-foreground">
+            {L(
+              locale,
+              "Réglez chaque variable, le rayon et les ombres sur les vrais composants, puis copiez le résultat.",
+              "Tune every variable, the radius and the shadows on the real components, then copy the result.",
+            )}
+          </span>
+        </span>
+        <span className="text-muted-foreground" aria-hidden>↗</span>
+      </a>
+
       <H2 id="choose">{L(locale, "Choisir un thème", "Choose a theme")}</H2>
       <CodeBlock lang="bash" copyLabel={t.copyCode} code={`pyblade-ui theme list\npyblade-ui theme set --base slate --color rose --radius 0.75rem`} />
       <div className="grid gap-3 sm:grid-cols-2">

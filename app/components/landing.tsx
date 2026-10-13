@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CodeBlock } from "@/app/components/docs/code-block";
-import { dictionaries, type Locale } from "@/lib/i18n";
+import { dictionaries, themesUrl, type Locale } from "@/lib/i18n";
 import { docsPath } from "@/lib/i18n-docs";
 import { blockCount, componentCount } from "@/lib/registry";
 import { IsoGlyph } from "./iso-glyph";
@@ -18,6 +18,7 @@ export function Landing({ locale }: { locale: Locale }) {
         <Hero locale={locale} />
         <Stats locale={locale} />
         <Components locale={locale} />
+        <ThemeEditor locale={locale} />
         <Features locale={locale} />
         <Code locale={locale} />
         <CallToAction locale={locale} />
@@ -29,6 +30,7 @@ export function Landing({ locale }: { locale: Locale }) {
             <Link href={docsPath(locale)} className="hover:text-foreground">{t.footer.docs}</Link>
             <Link href={docsPath(locale, "/installation")} className="hover:text-foreground">{t.footer.install}</Link>
             <Link href={docsPath(locale, "/theming")} className="hover:text-foreground">{t.footer.themes}</Link>
+            <a href={themesUrl(locale)} className="hover:text-foreground">{t.editor.footer}</a>
           </div>
           <p>{t.footer.note}</p>
         </div>
@@ -139,6 +141,40 @@ function Components({ locale }: { locale: Locale }) {
           >
             {t.all(componentCount)} <span aria-hidden>→</span>
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ThemeEditor({ locale }: { locale: Locale }) {
+  const t = dictionaries[locale].editor;
+  const swatches = ["#171717", "#1976d2", "#1d9bf0", "#1f883d", "#5e6ad2", "#635bff", "#e11d48", "#f59e0b"];
+  return (
+    <section className="border-b border-border py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="relative grid items-center gap-10 overflow-hidden rounded-3xl border border-border bg-surface p-8 sm:p-12 lg:grid-cols-[1.1fr_1fr]">
+          <div className="iso-grid fade-radial pointer-events-none absolute inset-0" />
+          <div className="relative">
+            <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">{t.kicker}</div>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">{t.title}</h2>
+            <p className="mt-4 max-w-lg text-lg text-muted-foreground">{t.body}</p>
+            <a
+              href={themesUrl(locale)}
+              className="mt-8 inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+            >
+              {t.button} <span aria-hidden>↗</span>
+            </a>
+          </div>
+          <a href={themesUrl(locale)} className="relative grid grid-cols-4 gap-3" aria-hidden tabIndex={-1}>
+            {swatches.map((c, i) => (
+              <div
+                key={c}
+                className="aspect-square rounded-2xl border border-border shadow-sm transition duration-300 hover:-translate-y-1"
+                style={{ background: c, borderRadius: `${0.25 + (i % 4) * 0.35}rem` }}
+              />
+            ))}
+          </a>
         </div>
       </div>
     </section>

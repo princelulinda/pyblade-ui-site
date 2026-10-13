@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ordered } from "@/lib/registry";
-import { dictionaries, type Locale } from "@/lib/i18n";
+import { dictionaries, themesUrl, type Locale } from "@/lib/i18n";
 import { docsDictionaries, docsPath } from "@/lib/i18n-docs";
 import { LangSwitch } from "./lang-switch";
 import { SearchButton } from "./search";
@@ -11,7 +11,7 @@ const navFor = (locale: Locale) => {
   return [
     { label: t.docs, href: docsPath(locale) },
     { label: t.components, href: docsPath(locale, "/components/button") },
-    { label: t.themes, href: docsPath(locale, "/theming") },
+    { label: t.themes, href: themesUrl(locale) },
     { label: t.cli, href: docsPath(locale, "/cli") },
     { label: t.blocks, href: docsPath(locale, "/components/login-form") },
   ];
