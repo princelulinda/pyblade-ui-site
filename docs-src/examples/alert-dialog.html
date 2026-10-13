@@ -1,0 +1,12 @@
+{# example: Aperçu | height=400 #}
+<pb-ui.alert-dialog name="confirm">
+  <pb-slot:trigger><pb-ui.button variant="outline">Afficher le dialogue</pb-ui.button></pb-slot:trigger>
+  <pb-ui.alert-dialog-header>
+    <pb-ui.alert-dialog-title>Êtes-vous absolument sûr ?</pb-ui.alert-dialog-title>
+    <pb-ui.alert-dialog-description>Cette action est irréversible. Votre compte sera supprimé de nos serveurs.</pb-ui.alert-dialog-description>
+  </pb-ui.alert-dialog-header>
+  <pb-ui.alert-dialog-footer>
+    <pb-ui.alert-dialog-cancel><pb-ui.button variant="outline">Annuler</pb-ui.button></pb-ui.alert-dialog-cancel>
+    <pb-ui.alert-dialog-action><pb-ui.button>Continuer</pb-ui.button></pb-ui.alert-dialog-action>
+  </pb-ui.alert-dialog-footer>
+</pb-ui.alert-dialog>

@@ -1,0 +1,28 @@
+{# example: Aperçu | height=480 #}
+<pb-ui.sheet name="profile">
+  <pb-slot:trigger><pb-ui.button variant="outline">Ouvrir</pb-ui.button></pb-slot:trigger>
+  <pb-ui.sheet-header>
+    <pb-ui.sheet-title>Modifier le profil</pb-ui.sheet-title>
+    <pb-ui.sheet-description>Enregistrez quand vous avez terminé.</pb-ui.sheet-description>
+  </pb-ui.sheet-header>
+  <div class="grid gap-4 px-4">
+    <div class="grid gap-2"><pb-ui.label for="sname">Nom</pb-ui.label><pb-ui.input id="sname" value="Ada Lovelace" /></div>
+    <div class="grid gap-2"><pb-ui.label for="suser">Utilisateur</pb-ui.label><pb-ui.input id="suser" value="@ada" /></div>
+  </div>
+  <pb-ui.sheet-footer>
+    <pb-ui.button>Enregistrer</pb-ui.button>
+    <pb-ui.sheet-close><pb-ui.button variant="outline">Fermer</pb-ui.button></pb-ui.sheet-close>
+  </pb-ui.sheet-footer>
+</pb-ui.sheet>
+{# example: Côtés | height=480 #}
+<div class="grid grid-cols-2 gap-2">
+  @for(side in ['top', 'right', 'bottom', 'left'])
+  <pb-ui.sheet :side="side">
+    <pb-slot:trigger><pb-ui.button variant="outline" class="w-full">{{ side }}</pb-ui.button></pb-slot:trigger>
+    <pb-ui.sheet-header>
+      <pb-ui.sheet-title>Panneau {{ side }}</pb-ui.sheet-title>
+      <pb-ui.sheet-description>Il glisse depuis ce bord de l'écran.</pb-ui.sheet-description>
+    </pb-ui.sheet-header>
+  </pb-ui.sheet>
+  @endfor
+</div>

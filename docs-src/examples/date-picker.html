@@ -1,0 +1,9 @@
+{# example: Aperçu | height=440 #}
+<pb-ui.date-picker name="due" placeholder="Choisir une date" locale="fr-FR" :week_start="1" class="w-64" />
+{# example: Dans un formulaire | height=460 #}
+<form class="grid w-72 gap-2" x-data x-on:submit.prevent="$el.querySelector('output').textContent = new FormData($el).get('birthday') || '—'">
+  <pb-ui.label>Date de naissance</pb-ui.label>
+  <pb-ui.date-picker name="birthday" value="1815-12-10" locale="fr-FR" :week_start="1" />
+  <p class="text-sm text-muted-foreground">Valeur envoyée : <output class="font-mono text-foreground">—</output></p>
+  <pb-ui.button type="submit" class="w-fit">Envoyer</pb-ui.button>
+</form>

@@ -1,0 +1,19 @@
+{# example: Aperçu | height=460 #}
+<pb-ui.drawer>
+  <pb-slot:trigger><pb-ui.button variant="outline">Ouvrir le drawer</pb-ui.button></pb-slot:trigger>
+  <div class="mx-auto w-full max-w-sm">
+    <pb-ui.drawer-header>
+      <pb-ui.drawer-title>Objectif du jour</pb-ui.drawer-title>
+      <pb-ui.drawer-description>Faites glisser la poignée vers le bas pour fermer.</pb-ui.drawer-description>
+    </pb-ui.drawer-header>
+    <div class="flex items-center justify-center gap-4 p-4" x-data="{ goal: 350 }">
+      <pb-ui.button variant="outline" size="icon" class="rounded-full" x-on:click="goal = Math.max(200, goal - 10)" aria-label="Moins">−</pb-ui.button>
+      <div class="text-center"><div class="text-6xl font-bold tracking-tighter" x-text="goal"></div><div class="text-xs text-muted-foreground uppercase">calories / jour</div></div>
+      <pb-ui.button variant="outline" size="icon" class="rounded-full" x-on:click="goal = Math.min(500, goal + 10)" aria-label="Plus">+</pb-ui.button>
+    </div>
+    <pb-ui.drawer-footer>
+      <pb-ui.button>Valider</pb-ui.button>
+      <pb-ui.drawer-close><pb-ui.button variant="outline" class="w-full">Annuler</pb-ui.button></pb-ui.drawer-close>
+    </pb-ui.drawer-footer>
+  </div>
+</pb-ui.drawer>

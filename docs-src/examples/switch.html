@@ -1,0 +1,22 @@
+{# example: Aperçu #}
+<div class="flex items-center gap-2">
+  <pb-ui.switch id="airplane" />
+  <pb-ui.label for="airplane">Mode avion</pb-ui.label>
+</div>
+{# example: Dans un formulaire | height=300 #}
+<div class="w-full max-w-md space-y-3">
+  <div class="flex items-center justify-between rounded-lg border p-4">
+    <div class="space-y-0.5">
+      <pb-ui.label for="marketing">Emails marketing</pb-ui.label>
+      <p class="text-sm text-muted-foreground">Nouveautés et offres.</p>
+    </div>
+    <pb-ui.switch id="marketing" />
+  </div>
+  <div class="flex items-center justify-between rounded-lg border p-4">
+    <div class="space-y-0.5">
+      <pb-ui.label for="security">Alertes de sécurité</pb-ui.label>
+      <p class="text-sm text-muted-foreground">Connexions inhabituelles.</p>
+    </div>
+    <pb-ui.switch id="security" checked />
+  </div>
+</div>

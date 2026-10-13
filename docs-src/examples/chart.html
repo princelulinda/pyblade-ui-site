@@ -1,0 +1,6 @@
+{# example: Barres | height=380 #}
+<pb-ui.chart type="bar" x="month" :data="visitors" :series="[{'key': 'desktop', 'label': 'Ordinateur'}, {'key': 'mobile', 'label': 'Mobile'}]" locale="fr-FR" class="w-full max-w-xl" />
+{# example: Courbe | height=380 #}
+<pb-ui.chart type="line" x="month" :data="visitors" :series="[{'key': 'desktop', 'label': 'Ordinateur'}, {'key': 'mobile', 'label': 'Mobile'}]" locale="fr-FR" class="w-full max-w-xl" />
+{# example: Aire | height=380 #}
+<pb-ui.chart type="area" x="month" :data="visitors" :series="[{'key': 'desktop', 'label': 'Ordinateur'}]" locale="fr-FR" class="w-full max-w-xl" />

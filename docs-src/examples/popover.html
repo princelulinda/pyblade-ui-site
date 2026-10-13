@@ -1,0 +1,12 @@
+{# example: Aperçu | height=400 #}
+<pb-ui.popover>
+  <pb-slot:trigger><pb-ui.button variant="outline">Dimensions</pb-ui.button></pb-slot:trigger>
+  <div class="grid gap-4">
+    <div class="space-y-1">
+      <h4 class="leading-none font-medium">Dimensions</h4>
+      <p class="text-sm text-muted-foreground">Définissez la taille du calque.</p>
+    </div>
+    <div class="grid grid-cols-3 items-center gap-4"><pb-ui.label for="w">Largeur</pb-ui.label><pb-ui.input id="w" value="100%" class="col-span-2 h-8" /></div>
+    <div class="grid grid-cols-3 items-center gap-4"><pb-ui.label for="h">Hauteur</pb-ui.label><pb-ui.input id="h" value="25px" class="col-span-2 h-8" /></div>
+  </div>
+</pb-ui.popover>

@@ -1,0 +1,7 @@
+{# example: Aperçu #}
+<pb-ui.slider name="volume" min="0" max="100" value="50" class="w-3/5" />
+{# example: Avec une valeur affichée #}
+<div class="grid w-3/5 gap-3" x-data="{ v: 25 }">
+  <div class="flex justify-between text-sm"><span class="font-medium">Température</span><span class="text-muted-foreground" x-text="v / 100"></span></div>
+  <pb-ui.slider min="0" max="100" value="25" step="1" x-model="v" />
+</div>

@@ -1,0 +1,8 @@
+{# example: Aperçu #}
+<pb-ui.input-otp name="code" :length="6" />
+{# example: Avec un libellé #}
+<div class="grid gap-2">
+  <pb-ui.label>Code de vérification</pb-ui.label>
+  <pb-ui.input-otp name="otp" :length="4" />
+  <p class="text-sm text-muted-foreground">Collez le code reçu par SMS.</p>
+</div>

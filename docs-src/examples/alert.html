@@ -1,0 +1,21 @@
+{# example: Aperçu #}
+<pb-ui.alert class="max-w-md">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+  <pb-ui.alert-title>Modifications enregistrées</pb-ui.alert-title>
+  <pb-ui.alert-description>Votre profil a bien été mis à jour.</pb-ui.alert-description>
+</pb-ui.alert>
+{# example: Variantes | height=380 #}
+<div class="grid w-full max-w-md gap-3">
+  <pb-ui.alert variant="destructive">
+    <pb-ui.alert-title>Erreur</pb-ui.alert-title>
+    <pb-ui.alert-description>Votre session a expiré. Reconnectez-vous.</pb-ui.alert-description>
+  </pb-ui.alert>
+  <pb-ui.alert variant="warning">
+    <pb-ui.alert-title>Attention</pb-ui.alert-title>
+    <pb-ui.alert-description>Votre quota est presque atteint.</pb-ui.alert-description>
+  </pb-ui.alert>
+  <pb-ui.alert variant="success">
+    <pb-ui.alert-title>Succès</pb-ui.alert-title>
+    <pb-ui.alert-description>Le paiement a été accepté.</pb-ui.alert-description>
+  </pb-ui.alert>
+</div>

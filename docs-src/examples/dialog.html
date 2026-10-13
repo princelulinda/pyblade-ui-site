@@ -1,0 +1,20 @@
+{# example: Aperçu | height=420 #}
+<pb-ui.dialog name="delete">
+  <pb-slot:trigger><pb-ui.button variant="outline">Supprimer le compte</pb-ui.button></pb-slot:trigger>
+  <pb-ui.dialog-header>
+    <pb-ui.dialog-title>Êtes-vous sûr ?</pb-ui.dialog-title>
+    <pb-ui.dialog-description>Cette action est irréversible. Votre compte et vos données seront supprimés.</pb-ui.dialog-description>
+  </pb-ui.dialog-header>
+  <pb-ui.dialog-footer>
+    <pb-ui.dialog-close><pb-ui.button variant="outline">Annuler</pb-ui.button></pb-ui.dialog-close>
+    <pb-ui.button variant="destructive">Supprimer</pb-ui.button>
+  </pb-ui.dialog-footer>
+</pb-ui.dialog>
+{# example: Ouvert par son nom | height=420 #}
+<pb-ui.button variant="secondary" x-data x-on:click="$dispatch('dialog-open', 'welcome')">Ouvrir de n'importe où</pb-ui.button>
+<pb-ui.dialog name="welcome">
+  <pb-ui.dialog-header>
+    <pb-ui.dialog-title>Bienvenue</pb-ui.dialog-title>
+    <pb-ui.dialog-description>Ce dialogue a été ouvert avec $dispatch('dialog-open', 'welcome').</pb-ui.dialog-description>
+  </pb-ui.dialog-header>
+</pb-ui.dialog>

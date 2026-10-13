@@ -1,0 +1,34 @@
+{# example: Aperçu | height=420 #}
+<pb-ui.command class="w-full max-w-md rounded-lg border shadow-md">
+  <pb-ui.command-input placeholder="Tapez une commande ou cherchez…" />
+  <pb-ui.command-list>
+    <pb-ui.command-empty>Aucun résultat.</pb-ui.command-empty>
+    <pb-ui.command-group heading="Suggestions">
+      <pb-ui.command-item>Calendrier</pb-ui.command-item>
+      <pb-ui.command-item>Rechercher un emoji</pb-ui.command-item>
+      <pb-ui.command-item>Calculatrice</pb-ui.command-item>
+    </pb-ui.command-group>
+    <pb-ui.command-separator />
+    <pb-ui.command-group heading="Paramètres">
+      <pb-ui.command-item>Profil <pb-ui.command-shortcut>⌘P</pb-ui.command-shortcut></pb-ui.command-item>
+      <pb-ui.command-item>Facturation <pb-ui.command-shortcut>⌘B</pb-ui.command-shortcut></pb-ui.command-item>
+      <pb-ui.command-item>Paramètres <pb-ui.command-shortcut>⌘S</pb-ui.command-shortcut></pb-ui.command-item>
+    </pb-ui.command-group>
+  </pb-ui.command-list>
+</pb-ui.command>
+{# example: Combobox (avec Popover) | height=420 #}
+<pb-ui.popover align="start">
+  <pb-slot:trigger><pb-ui.button variant="outline" class="w-52 justify-between">Choisir un framework…</pb-ui.button></pb-slot:trigger>
+  <pb-ui.command class="-m-4 w-72">
+    <pb-ui.command-input placeholder="Chercher…" />
+    <pb-ui.command-list>
+      <pb-ui.command-empty>Aucun framework.</pb-ui.command-empty>
+      <pb-ui.command-group heading="Frameworks">
+        <pb-ui.command-item>Django</pb-ui.command-item>
+        <pb-ui.command-item>Flask</pb-ui.command-item>
+        <pb-ui.command-item>FastAPI</pb-ui.command-item>
+        <pb-ui.command-item>Litestar</pb-ui.command-item>
+      </pb-ui.command-group>
+    </pb-ui.command-list>
+  </pb-ui.command>
+</pb-ui.popover>

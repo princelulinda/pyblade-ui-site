@@ -1,0 +1,7 @@
+{# example: Aperçu | height=340 #}
+<pb-ui.toaster position="bottom-right" />
+<div class="flex flex-wrap gap-2">
+  <pb-ui.button variant="outline" x-data x-on:click="toast({ title: 'Événement créé', description: 'Dimanche 13 octobre à 9h00' })">Afficher un toast</pb-ui.button>
+  <pb-ui.button variant="outline" x-data x-on:click="toast({ title: 'Enregistré', variant: 'success' })">Succès</pb-ui.button>
+  <pb-ui.button variant="outline" x-data x-on:click="toast({ title: 'Échec de l’envoi', variant: 'destructive' })">Erreur</pb-ui.button>
+</div>

@@ -1,0 +1,26 @@
+{# example: Aperçu | height=440 #}
+<pb-ui.card class="w-full max-w-sm">
+  <pb-ui.card-header>
+    <pb-ui.card-title>Créer un projet</pb-ui.card-title>
+    <pb-ui.card-description>Déployez votre nouveau projet en un clic.</pb-ui.card-description>
+  </pb-ui.card-header>
+  <pb-ui.card-content class="grid gap-4">
+    <div class="grid gap-2">
+      <label class="text-sm font-medium" for="name">Nom</label>
+      <input id="name" placeholder="Mon application" class="h-9 rounded-md border bg-transparent px-3 text-sm shadow-xs outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50" />
+    </div>
+  </pb-ui.card-content>
+  <pb-ui.card-footer class="flex justify-between">
+    <button class="h-9 rounded-md border px-4 text-sm">Annuler</button>
+    <button class="h-9 rounded-md bg-primary px-4 text-sm text-primary-foreground">Déployer</button>
+  </pb-ui.card-footer>
+</pb-ui.card>
+{# example: Avec une action | height=300 #}
+<pb-ui.card class="w-full max-w-sm">
+  <pb-ui.card-header>
+    <pb-ui.card-title>Notifications</pb-ui.card-title>
+    <pb-ui.card-description>Vous avez 3 messages non lus.</pb-ui.card-description>
+    <pb-ui.card-action><a href="#" class="text-sm underline-offset-4 hover:underline">Tout voir</a></pb-ui.card-action>
+  </pb-ui.card-header>
+  <pb-ui.card-content class="text-sm text-muted-foreground">Votre abonnement expire dans 3 jours.</pb-ui.card-content>
+</pb-ui.card>

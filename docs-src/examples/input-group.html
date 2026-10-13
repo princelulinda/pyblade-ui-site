@@ -1,0 +1,25 @@
+{# example: Aperçu | height=360 #}
+<div class="grid w-full max-w-sm gap-4">
+  <pb-ui.input-group>
+    <pb-ui.input-group-input placeholder="Rechercher…" />
+    <pb-ui.input-group-addon><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg></pb-ui.input-group-addon>
+    <pb-ui.input-group-addon align="inline-end"><pb-ui.kbd>⌘K</pb-ui.kbd></pb-ui.input-group-addon>
+  </pb-ui.input-group>
+  <pb-ui.input-group>
+    <pb-ui.input-group-addon><pb-ui.input-group-text>https://</pb-ui.input-group-text></pb-ui.input-group-addon>
+    <pb-ui.input-group-input placeholder="exemple.com" class="pl-0.5" />
+    <pb-ui.input-group-addon align="inline-end"><pb-ui.input-group-text>.fr</pb-ui.input-group-text></pb-ui.input-group-addon>
+  </pb-ui.input-group>
+  <pb-ui.input-group>
+    <pb-ui.input-group-addon><pb-ui.input-group-text>€</pb-ui.input-group-text></pb-ui.input-group-addon>
+    <pb-ui.input-group-input type="number" placeholder="0,00" />
+    <pb-ui.input-group-addon align="inline-end"><pb-ui.input-group-button variant="secondary">Payer</pb-ui.input-group-button></pb-ui.input-group-addon>
+  </pb-ui.input-group>
+  <pb-ui.input-group>
+    <pb-ui.input-group-textarea placeholder="Posez votre question…"></pb-ui.input-group-textarea>
+    <pb-ui.input-group-addon align="block-end">
+      <pb-ui.input-group-text>52 % utilisés</pb-ui.input-group-text>
+      <pb-ui.input-group-button variant="default" size="icon-xs" class="ml-auto rounded-full" aria-label="Envoyer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></pb-ui.input-group-button>
+    </pb-ui.input-group-addon>
+  </pb-ui.input-group>
+</div>
